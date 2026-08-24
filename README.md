@@ -186,4 +186,4 @@ This project is open source and available for personal and educational use.
 
 ---
 
-**Built with ❤️ for Mata Tech Skills Showcase Challenge**
+**Built with ❤️**
