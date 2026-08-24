@@ -224,34 +224,61 @@ function typeCode() {
 
             // After compilation, reveal main content
             setTimeout(() => {
-                // Simple fade transition
-                heroSection.style.transition = 'opacity 0.6s ease-out';
-                mainContent.style.transition = 'opacity 0.6s ease-in';
+                // Pre-load main content behind hero to prevent flash
+                mainContent.style.position = 'absolute';
+                mainContent.style.top = '0';
+                mainContent.style.left = '0';
+                mainContent.style.width = '100%';
+                mainContent.style.display = 'block';
+                mainContent.style.opacity = '0';
+                mainContent.style.zIndex = '1';
 
-                // Start fade
-                heroSection.style.opacity = '0';
-                mainContent.style.opacity = '1';
-                mainContent.classList.add('visible');
+                // Keep hero on top
+                heroSection.style.position = 'relative';
+                heroSection.style.zIndex = '2';
 
-                // After fade completes
-                setTimeout(() => {
-                    // Remove hero from DOM
-                    heroSection.style.display = 'none';
+                // Force browser to render main content
+                void mainContent.offsetHeight;
 
-                    // Unlock scroll
-                    unlockScroll();
+                // Wait a frame for rendering to complete
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        // Set transition properties
+                        heroSection.style.transition = 'opacity 0.8s ease-out';
+                        mainContent.style.transition = 'opacity 0.8s ease-in';
 
-                    // Scroll to top smoothly
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
+                        // Start crossfade
+                        heroSection.style.opacity = '0';
+                        mainContent.style.opacity = '1';
+                        mainContent.classList.add('visible');
+
+                        // After fade completes
+                        setTimeout(() => {
+                            // Clean up positioning
+                            heroSection.style.display = 'none';
+                            mainContent.style.position = '';
+                            mainContent.style.top = '';
+                            mainContent.style.left = '';
+                            mainContent.style.width = '';
+                            mainContent.style.zIndex = '';
+                            heroSection.style.zIndex = '';
+
+                            // Unlock scroll
+                            unlockScroll();
+
+                            // Scroll to top
+                            window.scrollTo({
+                                top: 0,
+                                behavior: 'smooth'
+                            });
+
+                            // Trigger scroll animations
+                            setTimeout(() => {
+                                observeElements();
+                            }, 100);
+                        }, 800); // Duration of fade
                     });
-
-                    // Trigger scroll animations
-                    setTimeout(() => {
-                        observeElements();
-                    }, 100);
-                }, 600); // Duration of fade
+                });
             }, 2200); // Duration of compile animation
         }, 500);
     }
@@ -319,6 +346,11 @@ function addTiltEffect() {
     const cards = document.querySelectorAll('.project-card');
 
     cards.forEach(card => {
+        // Add smooth transition when mouse enters
+        card.addEventListener('mouseenter', () => {
+            card.style.transition = 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+        });
+
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
@@ -330,6 +362,8 @@ function addTiltEffect() {
             const rotateX = (y - centerY) / 40;
             const rotateY = (centerX - x) / 40;
 
+            // Remove transition during movement for immediate response
+            card.style.transition = 'transform 0.1s ease-out';
             card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.02)`;
 
             // Add glow effect that follows cursor
@@ -340,25 +374,40 @@ function addTiltEffect() {
         });
 
         card.addEventListener('mouseleave', () => {
-            card.style.transform = '';
+            // Smooth transition back to normal
             card.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
-            setTimeout(() => {
-                card.style.transition = '';
-            }, 500);
-        });
-
-        card.addEventListener('mouseenter', () => {
-            card.style.transition = 'none';
+            card.style.transform = '';
         });
     });
 }
 
 // ==================== INITIALIZE ====================
-// Start typing animation when page loads
+// Fix white screen bug on reload at bottom of page
 window.addEventListener('load', () => {
-    setTimeout(() => {
-        typeCode();
-    }, 500);
+    // Check if user has already seen the animation (page reload scenario)
+    const hasSeenAnimation = sessionStorage.getItem('hasSeenAnimation');
+
+    // If scrolled down on load, skip hero animation
+    if (window.scrollY > 100 || hasSeenAnimation) {
+        // Skip animation, show main content immediately
+        heroSection.style.display = 'none';
+        mainContent.style.display = 'block';
+        mainContent.style.opacity = '1';
+        mainContent.classList.add('visible');
+        unlockScroll();
+        observeElements();
+        addTiltEffect();
+    } else {
+        // Show hero animation for first load
+        setTimeout(() => {
+            typeCode();
+        }, 500);
+    }
+});
+
+// Mark that animation has been seen this session
+window.addEventListener('beforeunload', () => {
+    sessionStorage.setItem('hasSeenAnimation', 'true');
 });
 
 // Add tilt effect after main content is visible
@@ -611,6 +660,60 @@ function addMagneticEffect(elements) {
 
 // Apply magnetic effect to nav links and contact links
 addMagneticEffect(document.querySelectorAll('.nav-link, .contact-link, .project-link'));
+
+// Image Modal Functionality
+const modal = document.getElementById('imageModal');
+const modalImg = document.getElementById('modalImage');
+const modalCaption = document.getElementById('modalCaption');
+const closeModal = document.querySelector('.modal-close');
+
+// Make project images clickable with modal
+document.querySelectorAll('.project-image, .work-card-image, .research-image').forEach(imageContainer => {
+    imageContainer.style.cursor = 'pointer';
+
+    // For research images (direct img elements)
+    if (imageContainer.classList.contains('research-image')) {
+        imageContainer.addEventListener('click', () => {
+            modal.classList.add('active');
+            modalImg.src = imageContainer.src;
+            modalCaption.textContent = imageContainer.alt || 'Research Image';
+            document.body.style.overflow = 'hidden';
+        });
+    } else {
+        // For project and work card images (container elements)
+        imageContainer.addEventListener('click', () => {
+            const img = imageContainer.querySelector('img');
+            if (img && img.src) {
+                modal.classList.add('active');
+                modalImg.src = img.src;
+                modalCaption.textContent = img.alt || 'Project Image';
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    }
+});
+
+// Close modal when clicking X
+closeModal.addEventListener('click', () => {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+});
+
+// Close modal when clicking outside the image
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+});
 
 // Lazy load images if any are added later
 if ('IntersectionObserver' in window) {

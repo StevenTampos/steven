@@ -14,7 +14,10 @@
     <!-- Floating Navigation -->
     <nav class="nav" id="nav">
         <div class="nav-container">
-            <a href="#hero" class="nav-logo">JT</a>
+            <a href="#hero" class="nav-logo">
+                <span class="nav-logo-icon">💻</span>
+                <span class="nav-logo-text">John Steven Tampos</span>
+            </a>
             <div class="nav-links">
                 <a href="#about" class="nav-link">About</a>
                 <a href="#projects" class="nav-link">Projects</a>
@@ -85,6 +88,12 @@
                     <span class="section-tag">class About {</span>
                 </div>
                 <div class="about-grid">
+                    <div class="about-profile">
+                        <div class="profile-image-container">
+                            <img src="img/steven_img.png" alt="John Steven Tampos" class="profile-image">
+                            <div class="profile-glow"></div>
+                        </div>
+                    </div>
                     <div class="about-text">
                         <p class="lead">BSIT student and Dean's Lister at University of San Carlos with hands-on experience leading full-stack, mobile, API, automation, and game server projects.</p>
                         <p>I specialize in building scalable systems from microservices architectures to real-time applications. My work spans inventory management systems, AI infrastructure, game servers, and social platforms, with a focus on clean architecture and practical problem-solving.</p>
@@ -138,134 +147,182 @@
                 <div class="projects-grid">
                     <!-- Chikibibi Inventory -->
                     <article class="project-card featured">
-                        <div class="project-header">
-                            <h3>Chikibibi Inventory System</h3>
-                            <span class="project-tag">Production</span>
+                        <div class="project-image">
+                            <img src="img/inventory_admin_view.png" alt="Chikibibi Inventory System" loading="lazy">
+                            <div class="project-overlay">
+                                <span class="view-label">View Image</span>
+                            </div>
                         </div>
-                        <p class="project-description">Full-featured inventory and sales management system with role-based access control, real-time alerts, transaction tracking, and supplier management. Built for Chikibibi restaurant.</p>
-                        <div class="project-tech">
-                            <span>PHP</span>
-                            <span>MySQL</span>
-                            <span>JavaScript</span>
-                            <span>CSS</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://inventory.dcism.org" target="_blank" rel="noopener" class="project-link">
-                                <span>Live Site</span>
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M6 3H3v10h10v-3M9 3h4m0 0v4m0-4L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                                </svg>
-                            </a>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3>Chikibibi Inventory System</h3>
+                                <span class="project-tag">Production</span>
+                            </div>
+                            <p class="project-description">Full-featured inventory and sales management system with role-based access control, real-time alerts, transaction tracking, and supplier management. Built for Chikibibi restaurant.</p>
+                            <div class="project-tech">
+                                <span>PHP</span>
+                                <span>MySQL</span>
+                                <span>JavaScript</span>
+                                <span>CSS</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://inventory.dcism.org" target="_blank" rel="noopener" class="project-link">
+                                    <span>Live Site</span>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M6 3H3v10h10v-3M9 3h4m0 0v4m0-4L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                </a>
+                            </div>
                         </div>
                         <div class="project-connection"></div>
                     </article>
 
                     <!-- UnityAI -->
                     <article class="project-card featured">
-                        <div class="project-header">
-                            <h3>UnityAI</h3>
-                            <span class="project-tag">Startup</span>
+                        <div class="project-image">
+                            <img src="img/unityai.png" alt="UnityAI Platform" loading="lazy">
+                            <div class="project-overlay">
+                                <span class="view-label">View Image</span>
+                            </div>
                         </div>
-                        <p class="project-description">Multi-model AI gateway with account registration, API key management, model access control, and real-time usage and cost monitoring. Customized One-API fork deployed for production use.</p>
-                        <div class="project-tech">
-                            <span>Go</span>
-                            <span>React</span>
-                            <span>Docker</span>
-                            <span>REST API</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://unityai.dpdns.org" target="_blank" rel="noopener" class="project-link">
-                                <span>Live Site</span>
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M6 3H3v10h10v-3M9 3h4m0 0v4m0-4L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                                </svg>
-                            </a>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3>UnityAI</h3>
+                                <span class="project-tag">Startup</span>
+                            </div>
+                            <p class="project-description">Multi-model AI gateway with account registration, API key management, model access control, and real-time usage and cost monitoring. Customized One-API fork deployed for production use.</p>
+                            <div class="project-tech">
+                                <span>Go</span>
+                                <span>React</span>
+                                <span>Docker</span>
+                                <span>REST API</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://unityai.dpdns.org" target="_blank" rel="noopener" class="project-link">
+                                    <span>Live Site</span>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M6 3H3v10h10v-3M9 3h4m0 0v4m0-4L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                </a>
+                            </div>
                         </div>
                         <div class="project-connection"></div>
                     </article>
 
                     <!-- StudyMate -->
                     <article class="project-card">
-                        <div class="project-header">
-                            <h3>StudyMate</h3>
-                            <span class="project-tag">Main Developer</span>
+                        <div class="project-image">
+                            <img src="img/studymate.png" alt="StudyMate Application" loading="lazy">
+                            <div class="project-overlay">
+                                <span class="view-label">View Image</span>
+                            </div>
                         </div>
-                        <p class="project-description">Student productivity web application with task management, budget tracking, deadline reminders, subject organization, and user profiles. Built with PHP backend and vanilla JavaScript frontend.</p>
-                        <div class="project-tech">
-                            <span>PHP</span>
-                            <span>MySQL</span>
-                            <span>JavaScript</span>
-                            <span>HTML/CSS</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/StevenTampos/StudyMate" target="_blank" rel="noopener" class="project-link">
-                                <span>GitHub</span>
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M6 3H3v10h10v-3M9 3h4m0 0v4m0-4L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                                </svg>
-                            </a>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3>StudyMate</h3>
+                                <span class="project-tag">Main Developer</span>
+                            </div>
+                            <p class="project-description">Student productivity web application with task management, budget tracking, deadline reminders, subject organization, and user profiles. Built with PHP backend and vanilla JavaScript frontend.</p>
+                            <div class="project-tech">
+                                <span>PHP</span>
+                                <span>MySQL</span>
+                                <span>JavaScript</span>
+                                <span>HTML/CSS</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/StevenTampos/StudyMate" target="_blank" rel="noopener" class="project-link">
+                                    <span>GitHub</span>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M6 3H3v10h10v-3M9 3h4m0 0v4m0-4L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                </a>
+                            </div>
                         </div>
                         <div class="project-connection"></div>
                     </article>
 
                     <!-- Disco -->
                     <article class="project-card">
-                        <div class="project-header">
-                            <h3>Disco</h3>
-                            <span class="project-tag">Main Developer</span>
+                        <div class="project-image">
+                            <img src="img/disco_homepage.png" alt="Disco Music Streaming App" loading="lazy">
+                            <div class="project-overlay">
+                                <span class="view-label">View Image</span>
+                            </div>
                         </div>
-                        <p class="project-description">Music streaming mobile app with playback controls, queues, playlists, favorites, search functionality, user profiles, themes, and song uploads. Built with Flutter frontend and PHP REST API backend.</p>
-                        <div class="project-tech">
-                            <span>Flutter</span>
-                            <span>Dart</span>
-                            <span>PHP</span>
-                            <span>MySQL</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/mellovy/Disco" target="_blank" rel="noopener" class="project-link">
-                                <span>GitHub</span>
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M6 3H3v10h10v-3M9 3h4m0 0v4m0-4L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                                </svg>
-                            </a>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3>Disco</h3>
+                                <span class="project-tag">Main Developer</span>
+                            </div>
+                            <p class="project-description">Music streaming mobile app with playback controls, queues, playlists, favorites, search functionality, user profiles, themes, and song uploads. Built with Flutter frontend and PHP REST API backend.</p>
+                            <div class="project-tech">
+                                <span>Flutter</span>
+                                <span>Dart</span>
+                                <span>PHP</span>
+                                <span>MySQL</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/mellovy/Disco" target="_blank" rel="noopener" class="project-link">
+                                    <span>GitHub</span>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M6 3H3v10h10v-3M9 3h4m0 0v4m0-4L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                </a>
+                            </div>
                         </div>
                         <div class="project-connection"></div>
                     </article>
 
                     <!-- WangshengRealm -->
                     <article class="project-card">
-                        <div class="project-header">
-                            <h3>WangshengRealm</h3>
-                            <span class="project-tag">Personal Project</span>
+                        <div class="project-image">
+                            <img src="img/discord_bot.png" alt="WangshengRealm Discord Bot" loading="lazy">
+                            <div class="project-overlay">
+                                <span class="view-label">View Image</span>
+                            </div>
                         </div>
-                        <p class="project-description">Multipurpose Discord bot with custom features, localization support, event processing, persistent data schemas, and social activity logging.</p>
-                        <div class="project-tech">
-                            <span>JavaScript</span>
-                            <span>Discord.js</span>
-                            <span>MongoDB</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/alphakeda/WangshengRealm" target="_blank" rel="noopener" class="project-link">
-                                <span>GitHub</span>
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M6 3H3v10h10v-3M9 3h4m0 0v4m0-4L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                                </svg>
-                            </a>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3>WangshengRealm</h3>
+                                <span class="project-tag">Personal Project</span>
+                            </div>
+                            <p class="project-description">Multipurpose Discord bot with custom features, localization support, event processing, persistent data schemas, and social activity logging.</p>
+                            <div class="project-tech">
+                                <span>JavaScript</span>
+                                <span>Discord.js</span>
+                                <span>MongoDB</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/alphakeda/WangshengRealm" target="_blank" rel="noopener" class="project-link">
+                                    <span>GitHub</span>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M6 3H3v10h10v-3M9 3h4m0 0v4m0-4L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                </a>
+                            </div>
                         </div>
                         <div class="project-connection"></div>
                     </article>
 
                     <!-- RoyaleMC -->
                     <article class="project-card">
-                        <div class="project-header">
-                            <h3>RoyaleMC</h3>
-                            <span class="project-tag">Game Server</span>
+                        <div class="project-image">
+                            <img src="img/RoyaleMC_Logo.png" alt="RoyaleMC Battle Royale Plugin" loading="lazy">
+                            <div class="project-overlay">
+                                <span class="view-label">View Image</span>
+                            </div>
                         </div>
-                        <p class="project-description">Minecraft battle royale plugin with configurable worlds, phased gameplay, shrinking borders, team recovery, spectator mode, statistics tracking, and airdrops.</p>
-                        <div class="project-tech">
-                            <span>Java 21</span>
-                            <span>Paper API</span>
-                            <span>Gradle</span>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3>RoyaleMC</h3>
+                                <span class="project-tag">Game Server</span>
+                            </div>
+                            <p class="project-description">Minecraft battle royale plugin with configurable worlds, phased gameplay, shrinking borders, team recovery, spectator mode, statistics tracking, and airdrops.</p>
+                            <div class="project-tech">
+                                <span>Java 21</span>
+                                <span>Paper API</span>
+                                <span>Gradle</span>
+                            </div>
                         </div>
                         <div class="project-connection"></div>
                     </article>
@@ -286,15 +343,31 @@
 
                 <div class="other-work-grid">
                     <article class="work-card">
-                        <h4>SIA Final Project</h4>
-                        <p>Microservices architecture with API gateway, separate user and task services, MySQL database, and real-time dashboard.</p>
-                        <a href="https://github.com/StevenTampos/SIA-FINAL" target="_blank" rel="noopener" class="work-link">View on GitHub →</a>
+                        <div class="work-card-image">
+                            <img src="img/sia_homepage.png" alt="SIA Final Project" loading="lazy">
+                            <div class="work-card-overlay">
+                                <span class="view-label">View Image</span>
+                            </div>
+                        </div>
+                        <div class="work-card-content">
+                            <h4>SIA Final Project</h4>
+                            <p>Microservices architecture with API gateway, separate user and task services, MySQL database, and real-time dashboard.</p>
+                            <a href="https://github.com/StevenTampos/SIA-FINAL" target="_blank" rel="noopener" class="work-link">View on GitHub →</a>
+                        </div>
                     </article>
 
                     <article class="work-card">
-                        <h4>Neal's Chicken</h4>
-                        <p>Prisma/PostgreSQL domain model for an early-stage food delivery platform.</p>
-                        <a href="https://github.com/npeteros/neals-chicken" target="_blank" rel="noopener" class="work-link">View on GitHub →</a>
+                        <div class="work-card-image">
+                            <img src="img/neal's_chicken.png" alt="Neal's Chicken" loading="lazy">
+                            <div class="work-card-overlay">
+                                <span class="view-label">View Image</span>
+                            </div>
+                        </div>
+                        <div class="work-card-content">
+                            <h4>Neal's Chicken</h4>
+                            <p>Prisma/PostgreSQL domain model for an early-stage food delivery platform.</p>
+                            <a href="https://github.com/npeteros/neals-chicken" target="_blank" rel="noopener" class="work-link">View on GitHub →</a>
+                        </div>
                     </article>
                 </div>
             </div>
@@ -354,6 +427,10 @@
                                     <p class="timeline-org">Consolatrix College of Toledo City</p>
                                     <p class="timeline-honor">With Honors | Best in Research <br><strong>Development of an Alcohol Detection
 System for School Environments using MQ3 Sensor</strong></p>
+                                    <div class="research-images">
+                                        <img src="img/best_research_g12_pic1.png" alt="Best in Research Award - Picture 1" class="research-image" loading="lazy">
+                                        <img src="img/best_research_g12_pic2.jpg" alt="Best in Research Award - Picture 2" class="research-image" loading="lazy">
+                                    </div>
                                 </div>
                             </div>
 
@@ -423,6 +500,13 @@ System for School Environments using MQ3 Sensor</strong></p>
                 <p>&copy; 2026 John Steven Tampos. Built with care and attention to detail.</p>
             </div>
         </footer>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div class="modal-caption" id="modalCaption"></div>
     </div>
 
     <script src="script.js"></script>
