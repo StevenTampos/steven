@@ -275,6 +275,8 @@ function typeCode() {
                             // Trigger scroll animations
                             setTimeout(() => {
                                 observeElements();
+                                // Add tilt effect after content is visible
+                                addTiltEffect();
                             }, 100);
                         }, 800); // Duration of fade
                     });
@@ -409,13 +411,6 @@ window.addEventListener('load', () => {
 window.addEventListener('beforeunload', () => {
     sessionStorage.setItem('hasSeenAnimation', 'true');
 });
-
-// Add tilt effect after main content is visible
-setTimeout(() => {
-    if (mainContent.classList.contains('visible')) {
-        addTiltEffect();
-    }
-}, 3000);
 
 // ==================== MAGNETIC BUTTON EFFECT ====================
 function addMagneticEffect() {
