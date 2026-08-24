@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Steven Tampos | Full-Stack Developer</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Floating Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">JT</a>
+            <div class="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+        <div class="scroll-progress" id="scroll-progress"></div>
+    </nav>
+
+    <svg style="position: absolute; width: 0; height: 0;" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <symbol id="icon-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+            </symbol>
+            <symbol id="icon-server" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                <line x1="6" y1="18" x2="6.01" y2="18"></line>
+            </symbol>
+            <symbol id="icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+            </symbol>
+        </defs>
+    </svg>
+
+    <!-- Particle Canvas -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-container">
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="file-name">developer.ts</span>
+                    <div class="window-controls">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <pre class="code-content"><code id="typed-code"></code><span class="cursor" id="cursor">|</span></pre>
+                <div class="compile-indicator" id="compile-indicator">
+                    <span class="compile-text">Compiling...</span>
+                    <div class="compile-bar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 5v14m0 0l7-7m-7 7l-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Main Content (Initially Hidden) -->
+    <div id="main-content" class="main-content">
+        <!-- About Section -->
+        <section class="section about" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <br>
+                    <span class="section-tag">class About {</span>
+                </div>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p class="lead">BSIT student and Dean's Lister at University of San Carlos with hands-on experience leading full-stack, mobile, API, automation, and game server projects.</p>
+                        <p>I specialize in building scalable systems from microservices architectures to real-time applications. My work spans inventory management systems, AI infrastructure, game servers, and social platforms, with a focus on clean architecture and practical problem-solving.</p>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <svg class="stat-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <div class="stat-value">Dean's Lister</div>
+                            <div class="stat-label">Academic Standing</div>
+                        </div>
+                        <div class="stat-card">
+                            <svg class="stat-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <use href="#icon-layers"/>
+                            </svg>
+                            <div class="stat-value">10+</div>
+                            <div class="stat-label">Projects Delivered</div>
+                        </div>
+                        <div class="stat-card">
+                            <svg class="stat-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <div class="stat-value">4+ Years</div>
+                            <div class="stat-label">Coding Experience</div>
+                        </div>
+                        <div class="stat-card">
+                            <svg class="stat-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <use href="#icon-code"/>
+                            </svg>
+                            <div class="stat-value">Full-Stack</div>
+                            <div class="stat-label">Development Expertise</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-footer">
+                    <span class="section-tag">}</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Section -->
+        <section class="section projects" id="projects">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">const projects = [</span>
+                    <h2>Featured Work</h2>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Chikibibi Inventory -->
+                    <article class="project-card featured">
+                        <div class="project-header">
+                            <h3>Chikibibi Inventory System</h3>
+                            <span class="project-tag">Production</span>
+                        </div>
+                        <p class="project-description">Full-featured inventory and sales management system with role-based access control, real-time alerts, transaction tracking, and supplier management. Built for Chikibibi restaurant.</p>
+                        <div class="project-tech">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>JavaScript</span>
+                            <span>CSS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://inventory.dcism.org" target="_blank" rel="noopener" class="project-link">
+                                <span>Live Site</span>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M6 3H3v10h10v-3M9 3h4m0 0v4m0-4L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="project-connection"></div>
+                    </article>
+
+                    <!-- UnityAI -->
+                    <article class="project-card featured">
+                        <div class="project-header">
+                            <h3>UnityAI</h3>
+                            <span class="project-tag">Startup</span>
+                        </div>
+                        <p class="project-description">Multi-model AI gateway with account registration, API key management, model access control, and real-time usage and cost monitoring. Customized One-API fork deployed for production use.</p>
+                        <div class="project-tech">
+                            <span>Go</span>
+                            <span>React</span>
+                            <span>Docker</span>
+                            <span>REST API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://unityai.dpdns.org" target="_blank" rel="noopener" class="project-link">
+                                <span>Live Site</span>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M6 3H3v10h10v-3M9 3h4m0 0v4m0-4L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="project-connection"></div>
+                    </article>
+
+                    <!-- StudyMate -->
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3>StudyMate</h3>
+                            <span class="project-tag">Main Developer</span>
+                        </div>
+                        <p class="project-description">Student productivity web application with task management, budget tracking, deadline reminders, subject organization, and user profiles. Built with PHP backend and vanilla JavaScript frontend.</p>
+                        <div class="project-tech">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>JavaScript</span>
+                            <span>HTML/CSS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/StevenTampos/StudyMate" target="_blank" rel="noopener" class="project-link">
+                                <span>GitHub</span>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M6 3H3v10h10v-3M9 3h4m0 0v4m0-4L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="project-connection"></div>
+                    </article>
+
+                    <!-- Disco -->
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3>Disco</h3>
+                            <span class="project-tag">Main Developer</span>
+                        </div>
+                        <p class="project-description">Music streaming mobile app with playback controls, queues, playlists, favorites, search functionality, user profiles, themes, and song uploads. Built with Flutter frontend and PHP REST API backend.</p>
+                        <div class="project-tech">
+                            <span>Flutter</span>
+                            <span>Dart</span>
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/mellovy/Disco" target="_blank" rel="noopener" class="project-link">
+                                <span>GitHub</span>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M6 3H3v10h10v-3M9 3h4m0 0v4m0-4L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="project-connection"></div>
+                    </article>
+
+                    <!-- WangshengRealm -->
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3>WangshengRealm</h3>
+                            <span class="project-tag">Personal Project</span>
+                        </div>
+                        <p class="project-description">Multipurpose Discord bot with custom features, localization support, event processing, persistent data schemas, and social activity logging.</p>
+                        <div class="project-tech">
+                            <span>JavaScript</span>
+                            <span>Discord.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/alphakeda/WangshengRealm" target="_blank" rel="noopener" class="project-link">
+                                <span>GitHub</span>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M6 3H3v10h10v-3M9 3h4m0 0v4m0-4L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="project-connection"></div>
+                    </article>
+
+                    <!-- RoyaleMC -->
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3>RoyaleMC</h3>
+                            <span class="project-tag">Game Server</span>
+                        </div>
+                        <p class="project-description">Minecraft battle royale plugin with configurable worlds, phased gameplay, shrinking borders, team recovery, spectator mode, statistics tracking, and airdrops.</p>
+                        <div class="project-tech">
+                            <span>Java 21</span>
+                            <span>Paper API</span>
+                            <span>Gradle</span>
+                        </div>
+                        <div class="project-connection"></div>
+                    </article>
+                </div>
+
+                <div class="section-footer">
+                    <span class="section-tag">]</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Other Work Section -->
+        <section class="section other-work" id="other-work">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Other Projects</h2>
+                </div>
+
+                <div class="other-work-grid">
+                    <article class="work-card">
+                        <h4>SIA Final Project</h4>
+                        <p>Microservices architecture with API gateway, separate user and task services, MySQL database, and real-time dashboard.</p>
+                        <a href="https://github.com/StevenTampos/SIA-FINAL" target="_blank" rel="noopener" class="work-link">View on GitHub →</a>
+                    </article>
+
+                    <article class="work-card">
+                        <h4>Neal's Chicken</h4>
+                        <p>Prisma/PostgreSQL domain model for an early-stage food delivery platform.</p>
+                        <a href="https://github.com/npeteros/neals-chicken" target="_blank" rel="noopener" class="work-link">View on GitHub →</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Education Section -->
+        <section class="section experience" id="experience">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">const experience = {</span>
+                </div>
+
+                <div class="experience-grid">
+                    <div class="experience-col">
+                        <h3>Work Experience</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-period">2022 - Present</span>
+                                    <h4>Inventory and Sales Support</h4>
+                                    <p class="timeline-org">Olympus Pharmacy, Balamban, Cebu</p>
+                                    <p>Managed inventory, tracked supply levels, and assisted with sales operations.</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-period">March 2023</span>
+                                    <h4>Work Immersion</h4>
+                                    <p class="timeline-org">CDRRMO, Toledo City, Cebu</p>
+                                    <p>Safety training and disaster risk reduction and management experience.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="experience-col">
+                        <h3>Education</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker active"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-period">2024 - Present</span>
+                                    <h4>Bachelor of Science in Information Technology</h4>
+                                    <p class="timeline-org">University of San Carlos, Talamban Campus</p>
+                                    <p class="timeline-honor">Dean's Lister</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-period">2021 - 2023</span>
+                                    <h4>Senior High School (STEM)</h4>
+                                    <p class="timeline-org">Consolatrix College of Toledo City</p>
+                                    <p class="timeline-honor">With Honors | Best in Research <br><strong>Development of an Alcohol Detection
+System for School Environments using MQ3 Sensor</strong></p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-period">2026</span>
+                                    <h4>Cisco Networking Academy</h4>
+                                    <p class="timeline-org">Switching, Routing, and Wireless Essentials</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-period">December 2025</span>
+                                    <h4>DataCamp</h4>
+                                    <p class="timeline-org">Docker and Kubernetes</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-footer">
+                    <span class="section-tag">}</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section contact" id="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <h2>Let's Connect</h2>
+                    <p class="contact-lead">Open to internship opportunities, collaborations, and interesting projects.</p>
+
+                    <div class="contact-links">
+                        <a href="mailto:johnsteventampos@gmail.com" class="contact-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>johnsteventampos@gmail.com</span>
+                        </a>
+
+                        <a href="https://github.com/StevenTampos" target="_blank" rel="noopener" class="contact-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>github.com/StevenTampos</span>
+                        </a>
+
+                        <a href="https://discord.com/users/alphakeda" target="_blank" rel="noopener" class="contact-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" fill="currentColor"/>
+                            </svg>
+                            <span>alphakeda</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2026 John Steven Tampos. Built with care and attention to detail.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
