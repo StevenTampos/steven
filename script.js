@@ -60,6 +60,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const root = document.documentElement;
+
+    if (!prefersReducedMotion && root.classList.contains('intro-pending')) {
+        const scrollKeys = new Set([' ', 'ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', 'Home', 'End']);
+        const preventScroll = event => event.preventDefault();
+        const preventScrollKeys = event => {
+            if (scrollKeys.has(event.key)) {
+                event.preventDefault();
+            }
+        };
+
+        const finishIntro = () => {
+            root.classList.remove('intro-running', 'intro-pending', 'intro-locked');
+            document.removeEventListener('wheel', preventScroll);
+            document.removeEventListener('touchmove', preventScroll);
+            document.removeEventListener('keydown', preventScrollKeys);
+            window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+        };
+
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+        root.classList.add('intro-locked');
+        document.addEventListener('wheel', preventScroll, { passive: false });
+        document.addEventListener('touchmove', preventScroll, { passive: false });
+        document.addEventListener('keydown', preventScrollKeys);
+
+        window.requestAnimationFrame(() => {
+            root.classList.add('intro-running');
+            window.setTimeout(finishIntro, 1320);
+        });
+    }
+
     const revealTargets = document.querySelectorAll(
         '.about-grid, .language-grid, .project-card, .work-card, .experience-col, .contact-content'
     );

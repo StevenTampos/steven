@@ -18,6 +18,11 @@
             } catch {
                 document.documentElement.dataset.theme = 'light';
             }
+
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.documentElement.classList.add('intro-pending');
+                history.scrollRestoration = 'manual';
+            }
         })();
     </script>
 </head>

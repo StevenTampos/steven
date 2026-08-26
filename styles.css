@@ -74,6 +74,74 @@ button { border: 0; }
 
 .container { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
 
+html.intro-locked,
+html.intro-locked body {
+    overflow: hidden;
+    overscroll-behavior: none;
+}
+
+html.intro-pending .nav,
+html.intro-pending .hero .eyebrow,
+html.intro-pending .hero h1,
+html.intro-pending .hero-lead,
+html.intro-pending .hero-actions,
+html.intro-pending .hero-meta,
+html.intro-pending .hero-portrait-wrap {
+    opacity: 0;
+}
+
+html.intro-pending .hero .eyebrow,
+html.intro-pending .hero h1,
+html.intro-pending .hero-lead,
+html.intro-pending .hero-actions,
+html.intro-pending .hero-meta {
+    transform: translateY(22px);
+}
+
+html.intro-pending .hero-portrait-wrap {
+    transform: translateX(46px);
+}
+
+html.intro-running .nav {
+    animation: intro-fade 360ms ease-out 80ms forwards;
+}
+
+html.intro-running .hero .eyebrow {
+    animation: intro-rise 480ms cubic-bezier(0.22, 1, 0.36, 1) 220ms forwards;
+}
+
+html.intro-running .hero h1 {
+    animation: intro-rise 620ms cubic-bezier(0.22, 1, 0.36, 1) 300ms forwards;
+}
+
+html.intro-running .hero-lead {
+    animation: intro-rise 480ms cubic-bezier(0.22, 1, 0.36, 1) 490ms forwards;
+}
+
+html.intro-running .hero-actions {
+    animation: intro-rise 440ms cubic-bezier(0.22, 1, 0.36, 1) 610ms forwards;
+}
+
+html.intro-running .hero-meta {
+    animation: intro-rise 440ms cubic-bezier(0.22, 1, 0.36, 1) 740ms forwards;
+}
+
+html.intro-running .hero-portrait-wrap {
+    animation: intro-portrait 760ms cubic-bezier(0.16, 1, 0.3, 1) 180ms forwards;
+}
+
+@keyframes intro-fade {
+    to { opacity: 1; }
+}
+
+@keyframes intro-rise {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes intro-portrait {
+    to { opacity: 1; transform: translateX(0); }
+}
+
 .nav {
     position: fixed;
     z-index: 20;
