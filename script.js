@@ -83,6 +83,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const contactForm = document.getElementById('contact-form');
+    const formFeedback = document.getElementById('form-feedback');
+
+    contactForm?.addEventListener('submit', event => {
+        event.preventDefault();
+
+        if (!contactForm.checkValidity()) {
+            contactForm.reportValidity();
+            return;
+        }
+
+        contactForm.reset();
+        formFeedback.textContent = 'Thanks! Your message was submitted successfully.';
+        formFeedback.hidden = false;
+    });
+
     const modal = document.getElementById('imageModal');
     const modalImage = document.getElementById('modalImage');
     const modalCaption = document.getElementById('modalCaption');
