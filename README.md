@@ -56,4 +56,4 @@ Portfolio/
 ## Contact
 
 - GitHub: [StevenTampos](https://github.com/StevenTampos)
-- Email: johnsteventampos@gmail.com
+- Email: johnsteventanpos@gmail.com
