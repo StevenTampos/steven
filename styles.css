@@ -351,6 +351,10 @@ html.intro-running .hero-portrait-wrap {
 .language-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); border-top: 1px solid var(--line-dark); list-style: none; }
 .language-item { min-height: 150px; display: flex; flex-direction: column; justify-content: center; gap: 0.8rem; padding: 1.2rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--accent); transition: background-color 220ms ease, color 220ms ease; }
 .language-item:last-child { border-right: 0; }
+.tools-eyebrow { margin-top: 3rem; }
+.tool-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.tool-grid .language-item:nth-child(4n) { border-right: 0; }
+.brand-icon { display: block; width: 2rem; height: 2rem; background: currentColor; -webkit-mask: var(--icon) center / contain no-repeat; mask: var(--icon) center / contain no-repeat; }
 .language-item i { font-size: 2rem; line-height: 1; transition: transform 240ms ease, color 240ms ease; }
 .language-item span { color: var(--ink-soft); font-size: 0.75rem; font-weight: 700; }
 .language-item:hover { background: var(--surface); }
@@ -381,7 +385,7 @@ html.intro-running .hero-portrait-wrap {
 
 .other-work { padding-top: 0; background: var(--paper); }
 .other-work .section-header { padding-top: 1rem; }
-.other-work-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.4rem; }
+.other-work-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.4rem; }
 .work-card h4 { color: var(--ink); font-size: 1rem; font-weight: 600; }
 .work-link { margin-top: 1.2rem; }
 
@@ -396,6 +400,8 @@ html.intro-running .hero-portrait-wrap {
 .timeline-content h4 { margin-top: 0.35rem; color: var(--ink); font-size: 0.938rem; font-weight: 600; line-height: 1.45; }
 .timeline-content p { margin-top: 0.4rem; color: var(--ink-soft); font-size: 0.813rem; }
 .timeline-org { font-weight: 600; }
+.timeline-org a { text-decoration: underline; text-underline-offset: 3px; }
+.timeline-org a:hover { color: var(--ink); }
 .timeline-honor { color: var(--accent) !important; }
 .research-images { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.55rem; margin-top: 1rem; }
 .research-image { aspect-ratio: 1.45 / 1; width: 100%; border-radius: 3px; object-fit: cover; cursor: zoom-in; }
